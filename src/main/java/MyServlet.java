@@ -16,7 +16,6 @@ public class MyServlet extends HttpServlet {
     private static final Logger logger = LogManager.getLogger(MyServlet.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
         String name = request.getParameter("firstName");
         String countValue = request.getParameter("lastName");
         String tolog = request.getParameter("toLog");
@@ -28,17 +27,6 @@ public class MyServlet extends HttpServlet {
 
        val += Integer.parseInt(countValue);
 
-        //String filepath = "C:\\Users\\user.DESKTOP-AFJDH5T\\IdeaProjects\\WebApp\\src\\main\\log.txt";
-        //String text = "abracadabra!";
-
-//        try {
-//            FileWriter writer = new FileWriter(filepath, true);
-//            BufferedWriter bufferedWriter = new BufferedWriter(writer);
-//            bufferedWriter.write(tolog);
-//            bufferedWriter.close();
-//        } catch (IOException e) {
-//            System.out.println(e);
-//        }
         PrintWriter out = response.getWriter();
         //out.println("Hello from Servlet!.GET" + name + lastname);
         out.println("randValue=" + random_int);
